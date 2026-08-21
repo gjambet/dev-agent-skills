@@ -1,9 +1,9 @@
 ---
-name: developer-tooling
-description: Apply shared developer-tooling and repository-management standards. Use when configuring Git repositories, dependencies between repositories, local development environments, build tooling, or project bootstrap workflows.
+name: development-tooling
+description: Apply shared development-tooling and repository-management standards. Use when configuring Git repositories, dependencies between repositories, local development environments, build tooling, or project bootstrap workflows.
 ---
 
-# Developer Tooling
+# Development Tooling
 
 ## Repository composition
 
