@@ -1,9 +1,9 @@
 ---
-name: java-project-engineering
-description: Apply reusable Java implementation and class-design standards. Use when creating, modifying, or reviewing Java classes, refactoring responsibilities, or deciding whether a type should be nested or top-level.
+name: java-coding-standards
+description: Apply reusable Java coding and class-design standards. Use when creating, modifying, or reviewing Java classes, refactoring responsibilities, or deciding whether a type should be nested or top-level.
 ---
 
-# Java Project Engineering
+# Java Coding Standards
 
 ## Class design
 
