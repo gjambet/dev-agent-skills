@@ -1,7 +1,0 @@
-version: 1
-
-paths:
-  architecture_decisions: architecture-decisions
-  sparks: sparks
-  requirements: requirements
-  technical_debt: technical-debt
