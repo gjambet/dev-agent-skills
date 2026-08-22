@@ -62,19 +62,20 @@ requirement or defect through the project's configured process.
 ## Work-item storage and identity
 
 - Store each work item in one Markdown file under its configured directory.
-- Use `<type>-<sequence>-<short-name>.md` as the filename.
-- Use `spark`, `requirement`, or `debt` as the filename type.
+- Name every work-item file `<id>.md`.
+- Use `spark-<sequence>`, `requirement-<sequence>`, or `debt-<sequence>` as its stable identifier.
+- Store the descriptive title only in the work-item metadata.
 - Allocate sequences independently for each work-item type.
 - Never reuse an identifier, including after an item is closed.
-- Keep the identifier stable when the title, filename, or status changes.
+- Never rename the file when its title or status changes.
 - Determine the next sequence from active and closed items.
 
 Examples:
 
 ```text
-spark-0001-offline-mobile-mode.md
-requirement-0001-record-transaction-cost.md
-debt-0001-duplicate-position-calculation.md
+spark-0001.md
+requirement-0001.md
+debt-0001.md
 ```
 
 Begin every work item with:

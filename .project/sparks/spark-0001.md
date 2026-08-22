@@ -1,3 +1,12 @@
+---
+id: spark-0001
+title: Project governance
+status: promoted
+created: 2026-08-21
+updated: 2026-08-22
+related: []
+---
+
 # Project governance
 
 ## Intent
@@ -80,3 +89,10 @@ inventing their own storage and lifecycle rules.
 - GitHub Issues can be used without making the contract GitHub-specific.
 - Project state remains in the affected project.
 - Portfolio state contains references and aggregates only.
+
+## Outcome
+
+Promoted to `project-governance/SKILL.md`.
+
+The promoted skill is the authoritative governance contract. Its project-local
+storage model supersedes exploratory provider-based storage described above.

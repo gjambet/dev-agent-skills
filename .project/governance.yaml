@@ -1,0 +1,6 @@
+version: 1
+
+paths:
+  sparks: sparks
+  requirements: requirements
+  technical_debt: technical-debt
