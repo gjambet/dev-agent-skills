@@ -4,8 +4,10 @@ title: Project compliance
 status: proposed
 created: 2026-08-21
 updated: 2026-08-22
-related:
-  - spark-0001
+relationships:
+  related:
+    - spark-0001
+  promoted-to: []
 ---
 
 # Project compliance
