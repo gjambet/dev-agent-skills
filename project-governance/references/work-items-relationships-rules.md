@@ -1,6 +1,6 @@
 # Work-item relationship rules
 
-Use typed relationships to preserve traceability between sparks, requirements, technical debt, implementation, and verification evidence.
+Use typed relationships to preserve traceability between sparks, requirements, technical debt, architecture decisions, implementation, and verification evidence.
 
 ## Representation
 
@@ -11,7 +11,7 @@ relationships:
   related: []
 ```
 
-Use stable work-item identifiers for relationships between governed work items. Do not use filenames, paths, titles, or mutable URLs as work-item identifiers.
+Use stable governed-record identifiers for relationships between work items and architecture decision records. Do not use filenames, paths, titles, or mutable URLs as work-item identifiers.
 
 Use evidence entries for links to implementation or verification artifacts:
 
@@ -26,12 +26,12 @@ relationships:
 
 Keep entries unique and deterministic. Order work-item identifiers lexicographically.
 
-## Work-item relationships
+## Governed-record relationships
 
 ### `related`
 
 - Use `related` for a meaningful relationship that has no more specific type.
-- Record it in both work items.
+- Record it in both governed records.
 - Add and remove both sides in the same change.
 
 ### `affects`
@@ -61,7 +61,7 @@ Evidence relationships are directional. They do not require modification of the 
 
 When adding or changing a relationship:
 
-- Verify that every referenced work-item identifier exists.
+- Verify that every referenced governed-record identifier exists.
 - Reject self-references and duplicate entries.
 - Update the `updated` date of every modified work item.
 - Record material relationship changes in history.
@@ -70,4 +70,4 @@ When validating governance state:
 
 - Report dangling identifiers, missing reciprocal work-item relationships, self-references, duplicates, and invalid evidence entries.
 - Do not silently repair invalid relationships unless the task explicitly authorizes modification.
-- Keep relationships to terminal items; closed, rejected, withdrawn, deprecated, verified, and resolved items remain valid relationship targets.
+- Keep relationships to terminal records; closed, rejected, withdrawn, deprecated, verified, and resolved items remain valid relationship targets.
