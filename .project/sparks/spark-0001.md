@@ -4,7 +4,10 @@ title: Project governance
 status: promoted
 created: 2026-08-21
 updated: 2026-08-22
-related: []
+relationships:
+  related:
+    - spark-0002
+  promoted-to: []
 ---
 
 # Project governance
