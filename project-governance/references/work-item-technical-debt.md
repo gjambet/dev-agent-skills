@@ -1,0 +1,48 @@
+# Technical debt
+
+Technical debt describes a working implementation or development setup that creates measurable maintenance, reliability, security, operational, or evolution cost.
+
+Do not classify missing required behaviour as technical debt. Record it as a requirement or defect through the project's configured process.
+
+## Storage and identity
+
+- Store each technical-debt item in the configured technical-debt directory.
+- Name the file `debt-<sequence>.md`.
+- Allocate sequences independently from other work-item types.
+- Never reuse an identifier or rename its file.
+
+Begin every technical-debt item with:
+
+```yaml
+---
+id: debt-0001
+title: Duplicate position calculation
+status: identified
+created: 2026-08-22
+updated: 2026-08-22
+relationships:
+  related: []
+  affects: []
+  remediated-by: []
+  verified-by: []
+---
+```
+
+Use ISO 8601 dates. Order work-item identifiers lexicographically and keep them unique.
+
+## Required content
+
+Include evidence, affected components, concrete impact, expected remediation outcome, resolution criteria, relationships, and material history.
+
+## Lifecycle
+
+```text
+identified -> accepted -> remediating -> resolved
+identified -> rejected
+identified | accepted -> exception
+```
+
+- Give every exception a justification and a review or expiry condition.
+- Move an item to `resolved` only when `remediated-by` identifies the remediation and `verified-by` proves that the debt no longer exists.
+- Record every material lifecycle transition in its history.
+- Apply [work-items-relationships-rules.md](work-items-relationships-rules.md) whenever relationships or evidence links change.
