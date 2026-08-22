@@ -34,12 +34,6 @@ Keep entries unique and deterministic. Order work-item identifiers lexicographic
 - Record it in both work items.
 - Add and remove both sides in the same change.
 
-### `promoted-to` and `originated-from`
-
-- Use `promoted-to` from a spark to every requirement created by its promotion.
-- Use `originated-from` from each resulting requirement back to the spark.
-- Maintain both sides together.
-
 ### `affects`
 
 - Use `affects` from technical debt to each requirement whose implementation or verification is affected.
@@ -62,12 +56,6 @@ Evidence relationships are directional. They do not require modification of the 
 - Use `remediated-by` on technical-debt items.
 - Reference the source changes, commits, or pull requests that remove the debt.
 - Do not treat remediation evidence alone as proof of resolution.
-
-### `verified-by`
-
-- Use `verified-by` on requirements and technical-debt items.
-- Reference tests, test reports, commands with recorded results, reviews, or other repeatable verification evidence.
-- Require verification evidence before changing a requirement to `verified` or technical debt to `resolved`.
 
 ## Integrity
 
