@@ -1,0 +1,85 @@
+# Work-item relationship rules
+
+Use typed relationships to preserve traceability between sparks, requirements, technical debt, implementation, and verification evidence.
+
+## Representation
+
+Store relationships in the work-item frontmatter:
+
+```yaml
+relationships:
+  related: []
+```
+
+Use stable work-item identifiers for relationships between governed work items. Do not use filenames, paths, titles, or mutable URLs as work-item identifiers.
+
+Use evidence entries for links to implementation or verification artifacts:
+
+```yaml
+relationships:
+  implemented-by:
+    - type: source
+      reference: src/main/java/com/example/Trade.java
+    - type: pull-request
+      reference: https://github.com/example/project/pull/42
+```
+
+Keep entries unique and deterministic. Order work-item identifiers lexicographically.
+
+## Work-item relationships
+
+### `related`
+
+- Use `related` for a meaningful relationship that has no more specific type.
+- Record it in both work items.
+- Add and remove both sides in the same change.
+
+### `promoted-to` and `originated-from`
+
+- Use `promoted-to` from a spark to every requirement created by its promotion.
+- Use `originated-from` from each resulting requirement back to the spark.
+- Maintain both sides together.
+
+### `affects`
+
+- Use `affects` from technical debt to each requirement whose implementation or verification is affected.
+- Add the debt item to the affected requirement's `related` list unless a more specific reverse relationship is defined.
+- Do not use `affects` as a substitute for documenting affected components and concrete impact.
+
+## Evidence relationships
+
+Evidence relationships are directional. They do not require modification of the referenced artifact.
+
+### `implemented-by`
+
+- Use `implemented-by` on requirements.
+- Reference verifiable implementation artifacts such as source files, commits, or pull requests.
+- Require at least one valid entry before changing a requirement to `implemented`.
+- Preserve entries as implementation history.
+
+### `remediated-by`
+
+- Use `remediated-by` on technical-debt items.
+- Reference the source changes, commits, or pull requests that remove the debt.
+- Do not treat remediation evidence alone as proof of resolution.
+
+### `verified-by`
+
+- Use `verified-by` on requirements and technical-debt items.
+- Reference tests, test reports, commands with recorded results, reviews, or other repeatable verification evidence.
+- Require verification evidence before changing a requirement to `verified` or technical debt to `resolved`.
+
+## Integrity
+
+When adding or changing a relationship:
+
+- Verify that every referenced work-item identifier exists.
+- Reject self-references and duplicate entries.
+- Update the `updated` date of every modified work item.
+- Record material relationship changes in history.
+
+When validating governance state:
+
+- Report dangling identifiers, missing reciprocal work-item relationships, self-references, duplicates, and invalid evidence entries.
+- Do not silently repair invalid relationships unless the task explicitly authorizes modification.
+- Keep relationships to terminal items; closed, rejected, withdrawn, deprecated, verified, and resolved items remain valid relationship targets.
