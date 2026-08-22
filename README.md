@@ -16,9 +16,9 @@ dev-agent-skills/
     ├── SKILL.md
     └── references/
         ├── project-layout.md
-        ├── sparks.md
-        ├── requirements.md
-        ├── technical-debt.md
+        ├── work-item-sparks.md
+        ├── work-item-requirements.md
+        ├── work-item-technical-debt.md
         └── work-items-relationships-rules.md
 ```
 
