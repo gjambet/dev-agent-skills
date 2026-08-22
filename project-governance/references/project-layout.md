@@ -7,6 +7,7 @@ Use `.project/` at the repository root as the canonical governance directory.
 ```text
 .project/
 ├── governance.yaml
+├── architecture-decisions/
 ├── sparks/
 ├── requirements/
 └── technical-debt/
@@ -24,12 +25,13 @@ Keep the complete directory under version control. Treat its contents as project
 version: 1
 
 paths:
+  architecture_decisions: architecture-decisions
   sparks: sparks
   requirements: requirements
   technical_debt: technical-debt
 ```
 
-- Create the configured work-item directories without speculative work items.
+- Create the configured governance directories without speculative work items.
 - When an empty directory must be retained by Git, add a minimal `.gitkeep`.
 - When `.project/` already exists, validate it instead of recreating it.
 - Report missing or invalid required content instead of silently replacing it.
