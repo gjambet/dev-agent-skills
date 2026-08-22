@@ -16,12 +16,13 @@ dev-agent-skills/
     ├── SKILL.md
     └── references/
         ├── project-layout.md
+        ├── architecture-decision-records.md
         ├── work-item-sparks.md
         ├── work-item-requirements.md
         ├── work-item-debts.md
         └── work-items-relationships-rules.md
 ```
 
-The `project-governance` skill defines project-local storage, work-item lifecycles, and typed traceability relationships. Requirements use `implemented-by` to reference verifiable implementation artifacts and `verified-by` to record verification evidence.
+The `project-governance` skill defines project-local storage, work-item lifecycles, architecture decision records, and typed traceability relationships. Requirements use `implemented-by` to reference verifiable implementation artifacts.
 
 Projects consume this repository through their `.agents/skills` directory. Keep project-specific configuration in the consuming project's `AGENTS.md`; keep reusable workflows and standards here.
