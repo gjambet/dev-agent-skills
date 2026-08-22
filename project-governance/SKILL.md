@@ -15,7 +15,7 @@ Never store a consuming project's work items in this skills repository. Preserve
 2. Read the reference for every work-item type involved:
    - [sparks.md](references/work-item-sparks.md)
    - [requirements.md](references/work-item-requirements.md)
-   - [technical-debt.md](references/work-item-technical-debt.md)
+   - [technical-debt.md](references/work-item-debts.md)
 3. Read [work-items-relationships-rules.md](references/work-items-relationships-rules.md) before creating, changing, removing, or validating relationships or evidence links.
 4. Validate existing governance state before modifying it.
 5. Preserve stable identifiers, history, evidence, and relationship integrity.
