@@ -1,9 +1,9 @@
 ---
 id: spark-0002
 title: Project compliance
-status: proposed
+status: sparked
 created: 2026-08-21
-updated: 2026-08-22
+updated: 2026-08-23
 relationships:
   related:
     - spark-0001
