@@ -7,9 +7,19 @@ Do not classify missing required behaviour as technical debt. Record it as a req
 ## Storage and identity
 
 - Store each technical-debt item in the configured technical-debt directory.
-- Name the file `debt-<sequence>.md`.
+- Name the file `debt-<sequence>-<short-topic>-<status>.md`.
+- Use two to four meaningful lowercase kebab-case words for `<short-topic>`.
+- Use the exact technical-debt lifecycle status for `<status>`.
+- Rename the file whenever its title or status changes; keep `id` unchanged.
 - Allocate sequences independently from other work-item types.
-- Never reuse an identifier or rename its file.
+- Determine the next sequence from debt items in every lifecycle state.
+- Never reuse an identifier.
+
+Example filename:
+
+```text
+debt-0001-position-calculation-identified.md
+```
 
 Begin every technical-debt item with:
 
