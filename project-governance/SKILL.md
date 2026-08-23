@@ -22,23 +22,24 @@ Never store a consuming project's governed records in this skills repository. Pr
 6. Validate existing governance state before modifying it.
 7. Preserve stable identifiers, history, evidence, and relationship integrity.
 
-## Shared identity rules
+## Shared identity and filename rules
 
-- Store each governed record in one Markdown file under its configured directory.
-- Name each file `<id>.md`.
-- Use `spark-<sequence>`, `requirement-<sequence>`, `debt-<sequence>`, or `policy-exception-<sequence>`.
+- Store each governed record in one Markdown file under its required directory.
+- Use `spark-<sequence>`, `requirement-<sequence>`, `debt-<sequence>`,
+  `adr-<sequence>`, or `policy-exception-<sequence>` as the stable
+  identifier.
+- Name each file `<id>-<short-topic>-<status>.md`.
+- Derive `<short-topic>` from two to four meaningful words that identify the
+  subject. Use lowercase kebab-case.
+- Use the record's exact lifecycle status as `<status>`.
+- Rename the file whenever its title or status changes. Never change the stable
+  identifier stored in frontmatter.
 - Allocate sequences independently for each governed-record type.
-- Determine the next sequence from active and terminal items.
-- Never reuse an identifier or rename a file when its title or status changes.
-- Store the descriptive title in metadata.
+- Determine the next sequence from every active and terminal record regardless
+  of its topic or status.
+- Never reuse an identifier.
+- Store the full descriptive title in metadata.
 - Use ISO 8601 dates.
-
-## Architecture decision identity
-
-- Store each ADR in one Markdown file under its configured directory.
-- Name each file `adr-<sequence>.md`.
-- Allocate ADR sequences independently from work-item sequences.
-- Never reuse an ADR identifier or rename its file.
 
 ## Shared change rules
 
