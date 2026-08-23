@@ -31,3 +31,5 @@ The `project-governance` skill defines project-local storage, work-item lifecycl
 The `project-compliance` skill checks every skill present in this repository, including future skills, and reconciles unjustified violations into the affected project's technical-debt records.
 
 Projects consume this repository through their `.agents/skills` directory. Keep project-specific configuration in the consuming project's `AGENTS.md`; keep reusable workflows and standards here.
+
+Governed records use readable filenames in the form `<id>-<short-topic>-<status>.md` while retaining a stable identifier in frontmatter.
