@@ -48,8 +48,9 @@ Do not create a new record merely because the evidence or wording changed.
 
 ## Policy exceptions
 
-When `project-governance` is present and correctly implemented, read its
-policy-exception rules and search the configured policy-exceptions directory.
+When the canonical policy-exception store defined by `project-governance` is
+usable, read its policy-exception rules and search `.project/policy-exceptions/`.
+A violation elsewhere in the governance layout does not prevent this search.
 
 Treat an exception as valid only when:
 
@@ -66,24 +67,37 @@ exception was rejected in the debt evidence.
 
 ## Debt storage
 
-When `project-governance` is present and correctly implemented:
+Use `.project/technical-debt/` whenever the canonical technical-debt store is
+usable according to `project-governance`, even when one or more governance
+rules are violated.
 
-- follow its technical-debt identity, content, lifecycle, relationship, and
-  storage rules;
-- store or update the finding in the configured technical-debt directory.
+A filename discrepancy, stale status suffix, incomplete record, or other
+isolated governance violation makes the affected record non-compliant; it does
+not make the entire governance implementation unusable. Record or update the
+finding in the canonical technical-debt directory and report the governance
+violation separately.
 
-When `project-governance` is absent or incorrectly implemented:
+Treat the canonical technical-debt store as unusable only when safe
+reconciliation is not possible, including when:
 
-- store or update the finding as `debt-<sequence>.md` in the repository root;
-- use the technical-debt format defined by the imported
-  `project-governance` skill when it can be read;
+- `.project/technical-debt/` is missing;
+- the required target directory cannot be determined unambiguously;
+- existing records cannot be reliably parsed or identified;
+- writing there could lose, overwrite, or duplicate governance state.
+
+When the canonical technical-debt store is absent or unusable:
+
+- store or update the finding in the repository root;
+- use `debt-<sequence>-<short-topic>-<status>.md` and the technical-debt
+  format defined by the imported `project-governance` skill when it can be
+  read;
 - otherwise preserve at minimum a stable identifier, title, status, dates,
   violated skill, violated rule, affected component, evidence, impact, and
   remediation criteria;
-- record the missing or invalid governance implementation as a compliance
+- record the missing or unusable governance store as a separate compliance
   violation;
-- migrate or merge root debt records into the governed technical-debt directory
-  after governance becomes valid.
+- migrate or merge root debt records into `.project/technical-debt/` after
+  the canonical store becomes usable.
 
 Never discard a root debt record during migration. Preserve its identifier when
 available and avoid creating a duplicate governed record.
