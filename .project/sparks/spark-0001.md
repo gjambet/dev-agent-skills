@@ -1,7 +1,7 @@
 ---
 id: spark-0001
 title: Project governance
-status: achieved
+status: in-implementation
 created: 2026-08-21
 updated: 2026-08-23
 relationships:
