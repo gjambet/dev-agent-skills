@@ -7,11 +7,19 @@ Do not use an ADR as a substitute for a requirement, implementation plan, or tec
 ## Storage and identity
 
 - Store each ADR in the configured architecture-decisions directory.
-- Name the file `adr-<sequence>.md`.
+- Name the file `adr-<sequence>-<short-topic>-<status>.md`.
+- Use two to four meaningful lowercase kebab-case words for `<short-topic>`.
+- Use the exact ADR lifecycle status for `<status>`.
+- Rename the file whenever its title or status changes; keep `id` unchanged.
 - Allocate ADR sequences independently from work-item sequences.
+- Determine the next sequence from ADRs in every lifecycle state.
 - Never reuse an identifier.
-- Never rename the file when its title or status changes.
-- Determine the next sequence from active and terminal ADRs.
+
+Example filename:
+
+```text
+adr-0001-postgresql-storage-proposed.md
+```
 
 Begin every ADR with:
 
