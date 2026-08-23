@@ -6,7 +6,6 @@ Use `.project/` at the repository root as the canonical governance directory.
 
 ```text
 .project/
-├── governance.yaml
 ├── architecture-decisions/
 ├── sparks/
 ├── requirements/
@@ -14,30 +13,18 @@ Use `.project/` at the repository root as the canonical governance directory.
 └── technical-debt/
 ```
 
-Keep the complete directory under version control. Treat its contents as project-local state belonging to the affected repository.
+Keep the complete directory under version control. Treat its contents as
+project-local state belonging to the affected repository.
+
+Use these fixed directory names. Do not relocate governed artefacts outside
+`.project/`.
 
 ## Initialization
 
 - Resolve the repository root before reading or changing governance state.
-- When `.project/` does not exist, create the complete structure.
-- Generate `.project/governance.yaml` with:
-
-```yaml
-version: 1
-
-paths:
-  architecture_decisions: architecture-decisions
-  sparks: sparks
-  requirements: requirements
-  policy_exceptions: policy-exceptions
-  technical_debt: technical-debt
-```
-
-- Create the configured governance directories without speculative work items.
+- When `.project/` does not exist, create the complete required structure.
+- Create the governance directories without speculative work items.
 - When an empty directory must be retained by Git, add a minimal `.gitkeep`.
-- When `.project/` already exists, validate it instead of recreating it.
+- When `.project/` already exists, validate the required structure instead of
+  recreating it.
 - Report missing or invalid required content instead of silently replacing it.
-
-## Path safety
-
-Interpret paths in `.project/governance.yaml` relative to `.project/`. Reject absolute paths and paths that escape the governance root.
