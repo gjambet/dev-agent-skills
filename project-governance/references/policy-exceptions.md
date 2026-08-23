@@ -11,9 +11,19 @@ specific justification.
 ## Storage and identity
 
 - Store each policy exception in the configured policy-exceptions directory.
-- Name the file `policy-exception-<sequence>.md`.
+- Name the file `policy-exception-<sequence>-<short-topic>-<status>.md`.
+- Use two to four meaningful lowercase kebab-case words for `<short-topic>`.
+- Use the exact policy-exception lifecycle status for `<status>`.
+- Rename the file whenever its title or status changes; keep `id` unchanged.
 - Allocate sequences independently from other governed-record types.
-- Never reuse an identifier or rename its file.
+- Determine the next sequence from exceptions in every lifecycle state.
+- Never reuse an identifier.
+
+Example filename:
+
+```text
+policy-exception-0001-legacy-package-name-active.md
+```
 
 Begin every policy exception with:
 
