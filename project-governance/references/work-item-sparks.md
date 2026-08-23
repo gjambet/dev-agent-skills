@@ -1,6 +1,6 @@
 # Sparks
 
-A spark captures an idea that has not yet been accepted as required project behaviour. It preserves intent, context, value, open questions, and links to related work. A spark does not authorize implementation.
+A spark carries an initiative from its initial capture through framing, implementation, and achievement. It preserves intent, context, expected value, constraints, relationships, and material history.
 
 ## Storage and identity
 
@@ -15,12 +15,11 @@ Begin every spark with:
 ---
 id: spark-0001
 title: Record transaction costs
-status: proposed
+status: sparked
 created: 2026-08-22
 updated: 2026-08-22
 relationships:
   related: []
-  promoted-to: []
 ---
 ```
 
@@ -30,14 +29,20 @@ Use ISO 8601 dates. Order identifiers lexicographically and keep them unique.
 
 Preserve the spark's intent, context, expected value, open questions, constraints, relationships, and material history.
 
+As the spark advances:
+
+- In `sparked`, capture the idea and why it may be valuable.
+- In `framed`, define the intended outcome, scope, constraints, and sufficient requirements to guide implementation.
+- In `in-implementation`, record the active implementation context and material progress.
+- In `achieved`, record the delivered outcome.
+
 ## Lifecycle
 
 ```text
-proposed -> promoted | rejected | withdrawn
+sparked -> framed -> in-implementation -> achieved
 ```
 
-- Promote a spark only by creating one or more requirements.
-- Link the spark and resulting requirements according to [work-items-relationships-rules.md](work-items-relationships-rules.md).
-- Preserve a promoted spark as decision history.
-- Do not transform, rename, or move a spark into a requirement.
+- Do not start implementation before the spark is `framed`.
+- Preserve an `achieved` spark as project history.
+- Do not reuse or repurpose an achieved spark for additional work.
 - Record every material lifecycle transition in its history.
