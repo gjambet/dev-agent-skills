@@ -10,6 +10,7 @@ Use `.project/` at the repository root as the canonical governance directory.
 ├── architecture-decisions/
 ├── sparks/
 ├── requirements/
+├── policy-exceptions/
 └── technical-debt/
 ```
 
@@ -28,6 +29,7 @@ paths:
   architecture_decisions: architecture-decisions
   sparks: sparks
   requirements: requirements
+  policy_exceptions: policy-exceptions
   technical_debt: technical-debt
 ```
 

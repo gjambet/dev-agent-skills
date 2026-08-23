@@ -38,6 +38,7 @@ The governed artefacts must include:
 - Sparks.
 - Requirements.
 - Technical-debt items.
+- Policy exceptions.
 - Architecture decision records.
 
 ## Storage rules

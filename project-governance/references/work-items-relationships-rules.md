@@ -1,6 +1,6 @@
 # Work-item relationship rules
 
-Use typed relationships to preserve traceability between sparks, requirements, technical debt, architecture decisions, implementation, and verification evidence.
+Use typed relationships to preserve traceability between sparks, requirements, technical debt, policy exceptions, architecture decisions, implementation, and verification evidence.
 
 ## Representation
 

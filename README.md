@@ -12,17 +12,22 @@ dev-agent-skills/
 │   └── SKILL.md
 ├── development-process/
 │   └── SKILL.md
-└── project-governance/
-    ├── SKILL.md
-    └── references/
-        ├── project-layout.md
-        ├── architecture-decision-records.md
-        ├── work-item-sparks.md
-        ├── work-item-requirements.md
-        ├── work-item-debts.md
-        └── work-items-relationships-rules.md
+├── project-governance/
+│   ├── SKILL.md
+│   └── references/
+│       ├── project-layout.md
+│       ├── architecture-decision-records.md
+│       ├── policy-exceptions.md
+│       ├── work-item-sparks.md
+│       ├── work-item-requirements.md
+│       ├── work-item-debts.md
+│       └── work-items-relationships-rules.md
+└── project-compliance/
+    └── SKILL.md
 ```
 
-The `project-governance` skill defines project-local storage, work-item lifecycles, architecture decision records, and typed traceability relationships. Requirements use `implemented-by` to reference verifiable implementation artifacts.
+The `project-governance` skill defines project-local storage, work-item lifecycles, policy exceptions, architecture decision records, and typed traceability relationships. Requirements use `implemented-by` to reference verifiable implementation artifacts.
+
+The `project-compliance` skill checks every skill present in this repository, including future skills, and reconciles unjustified violations into the affected project's technical-debt records.
 
 Projects consume this repository through their `.agents/skills` directory. Keep project-specific configuration in the consuming project's `AGENTS.md`; keep reusable workflows and standards here.

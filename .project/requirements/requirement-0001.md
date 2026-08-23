@@ -1,13 +1,15 @@
 ---
 id: requirement-0001
 title: Define project compliance skill behaviour
-status: accepted
+status: implemented
 created: 2026-08-23
 updated: 2026-08-23
 relationships:
   related:
     - spark-0002
-  implemented-by: []
+  implemented-by:
+    - type: source
+      reference: project-compliance/SKILL.md
 ---
 
 # Define project compliance skill behaviour
@@ -32,6 +34,15 @@ The project-compliance skill must:
   acceptance criteria.
 - Prevent new objective violations in changed code.
 - Recommend opportunistic remediation only when directly related and low risk.
+- Treat every skill present in this repository as applicable to the consuming
+  project, including skills added in the future.
+- Discover applicable skills dynamically instead of maintaining a fixed list.
+- Check for a valid matching policy exception before recording a violation as
+  technical debt.
+- Store compliance debt in the project-governance technical-debt directory when
+  governance is valid.
+- Store compliance debt in the repository root when project-governance is
+  absent or incorrectly implemented.
 
 ## Check triggers
 
@@ -79,5 +90,8 @@ During reconciliation, the skill must:
 - Regression, existing debt, and justified-exception handling are unambiguous.
 - Compliance debt is stored in the affected project, never in this skills
   repository.
+- All current and future skills in this repository are discovered automatically.
+- Invalid or missing governance cannot prevent a compliance violation from
+  being recorded.
 - The skill reconciles an existing backlog without creating duplicate work
   items.

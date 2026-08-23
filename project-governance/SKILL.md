@@ -1,6 +1,6 @@
 ---
 name: project-governance
-description: Establish and maintain the project-local governance structure used to record sparks, requirements, technical debt, and architecture decision records. Use when initializing or validating project governance, discovering project work, capturing or promoting an idea, managing requirements, recording technical debt, managing architecture decisions, or updating work-item relationships and lifecycle states.
+description: Establish and maintain the project-local governance structure used to record sparks, requirements, technical debt, policy exceptions, and architecture decision records. Use when initializing or validating project governance, discovering project work, capturing or promoting an idea, managing requirements, recording technical debt, reviewing policy exceptions, managing architecture decisions, or updating governed-record relationships and lifecycle states.
 ---
 
 # Project Governance
@@ -16,17 +16,18 @@ Never store a consuming project's governed records in this skills repository. Pr
    - [sparks.md](references/work-item-sparks.md)
    - [requirements.md](references/work-item-requirements.md)
    - [technical-debt.md](references/work-item-debts.md)
-3. Read [architecture-decision-records.md](references/architecture-decision-records.md) before creating, changing, superseding, or validating an ADR.
-4. Read [work-items-relationships-rules.md](references/work-items-relationships-rules.md) before creating, changing, removing, or validating relationships or evidence links.
-5. Validate existing governance state before modifying it.
-6. Preserve stable identifiers, history, evidence, and relationship integrity.
+3. Read [policy-exceptions.md](references/policy-exceptions.md) before creating, changing, matching, expiring, or validating a policy exception.
+4. Read [architecture-decision-records.md](references/architecture-decision-records.md) before creating, changing, superseding, or validating an ADR.
+5. Read [work-items-relationships-rules.md](references/work-items-relationships-rules.md) before creating, changing, removing, or validating relationships or evidence links.
+6. Validate existing governance state before modifying it.
+7. Preserve stable identifiers, history, evidence, and relationship integrity.
 
 ## Shared identity rules
 
-- Store each work item in one Markdown file under its configured directory.
+- Store each governed record in one Markdown file under its configured directory.
 - Name each file `<id>.md`.
-- Use `spark-<sequence>`, `requirement-<sequence>`, or `debt-<sequence>`.
-- Allocate sequences independently for each work-item type.
+- Use `spark-<sequence>`, `requirement-<sequence>`, `debt-<sequence>`, or `policy-exception-<sequence>`.
+- Allocate sequences independently for each governed-record type.
 - Determine the next sequence from active and terminal items.
 - Never reuse an identifier or rename a file when its title or status changes.
 - Store the descriptive title in metadata.
@@ -42,7 +43,7 @@ Never store a consuming project's governed records in this skills repository. Pr
 ## Shared change rules
 
 - Do not populate speculative work items during initialization.
-- Update the `updated` date whenever a work item changes.
+- Update the `updated` date whenever a governed record changes.
 - Record material lifecycle and relationship changes in history.
 - Do not silently replace invalid governance content.
 - Do not mark work implemented, verified, remediated, or resolved without the evidence required by its type reference.
