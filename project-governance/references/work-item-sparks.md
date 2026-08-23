@@ -5,9 +5,19 @@ A spark carries an initiative from its initial capture through framing, implemen
 ## Storage and identity
 
 - Store each spark in the configured sparks directory.
-- Name the file `spark-<sequence>.md`.
+- Name the file `spark-<sequence>-<short-topic>-<status>.md`.
+- Use two to four meaningful lowercase kebab-case words for `<short-topic>`.
+- Use the exact spark lifecycle status for `<status>`.
+- Rename the file whenever its title or status changes; keep `id` unchanged.
 - Allocate sequences independently from other work-item types.
-- Never reuse an identifier or rename its file.
+- Determine the next sequence from sparks in every lifecycle state.
+- Never reuse an identifier.
+
+Example filename:
+
+```text
+spark-0001-transaction-costs-sparked.md
+```
 
 Begin every spark with:
 
