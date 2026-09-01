@@ -23,6 +23,26 @@ maintain a fixed list.
 Do not treat examples, assets, generated files, or nested reference documents
 as independent skills.
 
+## Documentation language
+
+- Write project documentation in English.
+- Use a non-English word or expression only when a specific business need
+  requires the original term and an English replacement would lose relevant
+  meaning.
+- When project documentation contains such a term, create or update
+  `.project/glossary.md` and define the term there in English. Include its
+  source language, business meaning, and the reason the original term is
+  retained.
+- Keep the glossary under version control and update it in the same change that
+  introduces, changes, or removes the documented term.
+- Do not require glossary entries for source-code identifiers, registered names,
+  third-party product names, or verbatim quotations that are not part of the
+  project's own explanatory prose.
+
+Treat undocumented foreign-language business terminology and project
+documentation written in a language other than English as compliance
+violations. Do not create an empty glossary when no qualifying term is used.
+
 ## Compliance workflow
 
 For every applicable rule:
