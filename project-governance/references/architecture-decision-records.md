@@ -6,7 +6,8 @@ Do not use an ADR as a substitute for a requirement, implementation plan, or tec
 
 An ADR explains **why** an architectural choice was made. Put detailed
 instructions for **how** that choice is implemented in a technical design under
-`.project/technical-design/` and link the records when both exist.
+`.project/technical-design/`. Linking the records is optional and should be done
+only when it adds useful traceability.
 
 ## Storage and identity
 

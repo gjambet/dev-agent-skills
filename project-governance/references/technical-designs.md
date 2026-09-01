@@ -9,7 +9,7 @@ An architecture decision record explains why an architectural choice was made,
 including its context, alternatives, and consequences. A technical design
 explains how to realize that choice. Do not use a technical design to replace
 the decision history in an ADR, and do not overload an ADR with detailed
-implementation instructions.
+implementation instructions. A technical design does not require an ADR.
 
 ## Storage and identity
 
@@ -17,12 +17,12 @@ implementation instructions.
   control, even when it contains no technical designs.
 - Store every technical design in that directory.
 - Use `design-<sequence>` as the stable identifier.
-- Name each file `design-<sequence>-<short-topic>-<status>.md`.
+- Name each file `design-<sequence>-<short-topic>.md`.
 - Use two to four meaningful lowercase kebab-case words for `<short-topic>`.
-- Use the exact lifecycle status for `<status>`.
-- Rename the file when its title or status changes; never change its stable
-  identifier.
+- Rename the file when its title changes; never change its stable identifier.
 - Allocate design sequences independently and never reuse an identifier.
+- Do not assign a lifecycle or status to technical designs. Maintain them as
+  living project documentation under version control.
 
 Begin every technical design with:
 
@@ -30,12 +30,10 @@ Begin every technical design with:
 ---
 id: design-0001
 title: Authenticate browser sessions with Keycloak
-status: draft
 created: 2026-09-01
 updated: 2026-09-01
 relationships:
-  related:
-    - adr-0001
+  related: []
 ---
 ```
 
@@ -72,22 +70,8 @@ engineer or agent to implement the design consistently:
 - Describe relevant failure modes, recovery, observability, security, migration,
   and operational behavior.
 - Identify where and how the design may be reused as a pattern.
-- Link relevant ADRs and governed work items with stable identifiers.
-- Keep decision rationale in the related ADR; summarize only enough context to
-  make the design understandable.
-
-## Lifecycle
-
-```text
-draft -> active | rejected
-active -> deprecated | superseded
-```
-
-- An `active` design is the current implementation guidance.
-- Update an active design when clarification does not materially change its
-  architecture or compatibility expectations.
-- Create a new design when a material replacement must coexist with the
-  previous guidance or preserving migration history matters.
-- When superseding a design, link the replacement in both records and record
-  the transition in their history.
-- Retain rejected, deprecated, and superseded designs as project history.
+- Optionally link relevant ADRs and governed work items with stable identifiers
+  when the relationship adds useful traceability.
+- When an ADR is linked, keep decision rationale in the ADR and summarize only
+  enough context to make the design understandable.
+- Do not create an ADR solely to satisfy a technical-design relationship.

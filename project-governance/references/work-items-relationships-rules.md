@@ -44,8 +44,10 @@ Keep entries unique and deterministic. Order work-item identifiers lexicographic
 
 ### Architecture decisions and technical designs
 
-- Link an ADR and its implementing technical design through `related` in both
-  records.
+- An ADR-to-technical-design relationship is optional.
+- When such a relationship adds useful traceability, link the ADR and technical
+  design through `related` in both records.
+- Do not require or create an ADR merely because a technical design exists.
 - Do not duplicate decision rationale in the technical design or detailed
   implementation instructions in the ADR.
 - A technical design may relate to multiple ADRs, and an ADR may be realized by

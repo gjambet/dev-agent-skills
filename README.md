@@ -33,4 +33,4 @@ The `project-compliance` skill checks every skill present in this repository, in
 
 Projects consume this repository through their `.agents/skills` directory. Keep project-specific configuration in the consuming project's `AGENTS.md`; keep reusable workflows and standards here.
 
-Governed records use readable filenames in the form `<id>-<short-topic>-<status>.md` while retaining a stable identifier in frontmatter.
+Lifecycle-managed records use readable filenames in the form `<id>-<short-topic>-<status>.md`; technical designs use `<id>-<short-topic>.md`. Every governed record retains a stable identifier in frontmatter.

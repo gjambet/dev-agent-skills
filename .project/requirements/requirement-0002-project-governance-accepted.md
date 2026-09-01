@@ -61,12 +61,13 @@ For every governed artefact type, define:
 - Stable identity and filename rules.
 - Required frontmatter.
 - Required body content.
-- Lifecycle states and transition rules.
+- Lifecycle states and transition rules where the artefact uses a lifecycle.
 - History and retention rules.
 - Type-specific evidence requirements where applicable.
 - A clear separation between ADRs that explain why an architectural decision
   was made and technical designs that explain in detail how the solution is to
   be implemented.
+- Technical designs must not require lifecycle statuses or a related ADR.
 
 ## Relationship rules
 
@@ -84,7 +85,7 @@ For every governed artefact type, define:
   disclosure.
 - Storage is defined for every governed artefact type.
 - Expected metadata and content are defined for every governed artefact type.
-- Lifecycle and retention rules are explicit.
+- Lifecycle and retention rules are explicit where applicable.
 - Relationship semantics and integrity rules are explicit.
 - The framework remains project-local and independent of a specific issue
   provider.

@@ -18,7 +18,8 @@ Never store a consuming project's governed records in this skills repository. Pr
    - [technical-debt.md](references/work-item-debts.md)
 3. Read [policy-exceptions.md](references/policy-exceptions.md) before creating, changing, matching, expiring, or validating a policy exception.
 4. Read [architecture-decision-records.md](references/architecture-decision-records.md) before creating, changing, superseding, or validating an ADR.
-5. Read [technical-designs.md](references/technical-designs.md) before creating, changing, superseding, or validating a technical design.
+5. Read [technical-designs.md](references/technical-designs.md) before creating,
+   changing, or validating a technical design.
 6. Read [work-items-relationships-rules.md](references/work-items-relationships-rules.md) before creating, changing, removing, or validating relationships or evidence links.
 7. Validate existing governance state before modifying it.
 8. Preserve stable identifiers, history, evidence, and relationship integrity.
@@ -27,14 +28,18 @@ Never store a consuming project's governed records in this skills repository. Pr
 
 - Store each governed record in one Markdown file under its required directory.
 - Use `spark-<sequence>`, `requirement-<sequence>`, `debt-<sequence>`,
-  `adr-<sequence>`, `design-<sequence>`, or `policy-exception-<sequence>` as the stable
-  identifier.
-- Name each file `<id>-<short-topic>-<status>.md`.
+  `adr-<sequence>`, `design-<sequence>`, or `policy-exception-<sequence>` as
+  the stable identifier.
+- Name lifecycle-managed records `<id>-<short-topic>-<status>.md`.
+- Name technical designs `<id>-<short-topic>.md`; they do not have a lifecycle
+  status.
 - Derive `<short-topic>` from two to four meaningful words that identify the
   subject. Use lowercase kebab-case.
-- Use the record's exact lifecycle status as `<status>`.
-- Rename the file whenever its title or status changes. Never change the stable
-  identifier stored in frontmatter.
+- For lifecycle-managed records, use the record's exact lifecycle status as
+  `<status>`.
+- Rename a file whenever its title changes, and rename a lifecycle-managed
+  record whenever its status changes. Never change the stable identifier stored
+  in frontmatter.
 - Allocate sequences independently for each governed-record type.
 - Determine the next sequence from every active and terminal record regardless
   of its topic or status.
