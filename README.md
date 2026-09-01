@@ -28,7 +28,7 @@ dev-agent-skills/
 
 The `project-governance` skill defines project-local storage, work-item lifecycles, policy exceptions, architecture decision records, and typed traceability relationships. Requirements use `implemented-by` to reference verifiable implementation artifacts.
 
-The `project-compliance` skill checks every skill present in this repository, including future skills, and reconciles unjustified violations into the affected project's technical-debt records.
+The `project-compliance` skill checks every skill present in this repository, including future skills, and reconciles unjustified violations into the affected project's technical-debt records. It also requires project documentation to be written in English and places definitions for business-required foreign-language terms in `.project/glossary.md`.
 
 Projects consume this repository through their `.agents/skills` directory. Keep project-specific configuration in the consuming project's `AGENTS.md`; keep reusable workflows and standards here.
 
