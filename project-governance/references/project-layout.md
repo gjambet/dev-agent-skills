@@ -11,6 +11,7 @@ Use `.project/` at the repository root as the canonical governance directory.
 ├── sparks/
 ├── requirements/
 ├── policy-exceptions/
+├── technical-design/
 └── technical-debt/
 ```
 
@@ -19,7 +20,7 @@ business terminology as permitted by `project-compliance`; it is not required
 otherwise. The glossary belongs directly under `.project/`, not in a work-item
 directory.
 
-The five directories are required. `glossary.md` is conditional.
+The six directories are required. `glossary.md` is conditional.
 
 Keep the complete directory under version control. Treat its contents as
 project-local state belonging to the affected repository.

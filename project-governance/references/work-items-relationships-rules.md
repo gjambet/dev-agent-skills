@@ -1,6 +1,6 @@
 # Work-item relationship rules
 
-Use typed relationships to preserve traceability between sparks, requirements, technical debt, policy exceptions, architecture decisions, implementation, and verification evidence.
+Use typed relationships to preserve traceability between sparks, requirements, technical debt, policy exceptions, architecture decisions, technical designs, implementation, and verification evidence.
 
 ## Representation
 
@@ -11,7 +11,9 @@ relationships:
   related: []
 ```
 
-Use stable governed-record identifiers for relationships between work items and architecture decision records. Do not use filenames, paths, titles, or mutable URLs as work-item identifiers.
+Use stable governed-record identifiers for relationships between work items,
+architecture decision records, and technical designs. Do not use filenames,
+paths, titles, or mutable URLs as governed-record identifiers.
 
 Use evidence entries for links to implementation or verification artifacts:
 
@@ -39,6 +41,15 @@ Keep entries unique and deterministic. Order work-item identifiers lexicographic
 - Use `affects` from technical debt to each requirement whose implementation or verification is affected.
 - Add the debt item to the affected requirement's `related` list unless a more specific reverse relationship is defined.
 - Do not use `affects` as a substitute for documenting affected components and concrete impact.
+
+### Architecture decisions and technical designs
+
+- Link an ADR and its implementing technical design through `related` in both
+  records.
+- Do not duplicate decision rationale in the technical design or detailed
+  implementation instructions in the ADR.
+- A technical design may relate to multiple ADRs, and an ADR may be realized by
+  multiple technical designs.
 
 ## Evidence relationships
 

@@ -3,7 +3,7 @@ id: requirement-0002
 title: Define project governance
 status: accepted
 created: 2026-08-23
-updated: 2026-08-23
+updated: 2026-09-01
 relationships:
   related:
     - spark-0001
@@ -40,10 +40,13 @@ The governed artefacts must include:
 - Technical-debt items.
 - Policy exceptions.
 - Architecture decision records.
+- Technical designs.
 
 ## Storage rules
 
 - Keep governed artefacts under the affected repository's `.project/`
+  directory.
+- Keep technical designs in the permanent `.project/technical-design/`
   directory.
 - Keep project governance state under version control.
 - Keep reusable workflows and schemas in this skills repository.
@@ -61,6 +64,9 @@ For every governed artefact type, define:
 - Lifecycle states and transition rules.
 - History and retention rules.
 - Type-specific evidence requirements where applicable.
+- A clear separation between ADRs that explain why an architectural decision
+  was made and technical designs that explain in detail how the solution is to
+  be implemented.
 
 ## Relationship rules
 

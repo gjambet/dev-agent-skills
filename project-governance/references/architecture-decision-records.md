@@ -4,6 +4,10 @@ An architecture decision record (ADR) captures an architecturally significant de
 
 Do not use an ADR as a substitute for a requirement, implementation plan, or technical-debt item.
 
+An ADR explains **why** an architectural choice was made. Put detailed
+instructions for **how** that choice is implemented in a technical design under
+`.project/technical-design/` and link the records when both exist.
+
 ## Storage and identity
 
 - Store each ADR in the configured architecture-decisions directory.
