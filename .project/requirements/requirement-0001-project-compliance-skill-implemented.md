@@ -3,7 +3,7 @@ id: requirement-0001
 title: Define project compliance skill behaviour
 status: implemented
 created: 2026-08-23
-updated: 2026-08-23
+updated: 2026-09-01
 relationships:
   related:
     - spark-0002
@@ -37,6 +37,9 @@ The project-compliance skill must:
 - Treat every skill present in this repository as applicable to the consuming
   project, including skills added in the future.
 - Discover applicable skills dynamically instead of maintaining a fixed list.
+- Require project documentation to be written in English and require an English
+  glossary under `.project/` when specific business needs require retaining
+  foreign-language terminology.
 - Check for a valid matching policy exception before recording a violation as
   technical debt.
 - Store compliance debt in the project-governance technical-debt directory when
