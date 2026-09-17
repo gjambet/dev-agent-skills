@@ -15,6 +15,16 @@ Use stable governed-record identifiers for relationships between work items,
 architecture decision records, and technical designs. Do not use filenames,
 paths, titles, or mutable URLs as governed-record identifiers.
 
+For a relationship to a governed record owned by another repository in the same multi-repository application, qualify the stable identifier with the repository identifier from `.project/application.md`:
+
+```yaml
+relationships:
+  related:
+    - gjambet/quittances-api:requirement-0012
+```
+
+Use bare identifiers for records owned by the current repository. Use qualified identifiers only for cross-repository references.
+
 Use evidence entries for links to implementation or verification artifacts:
 
 ```yaml
@@ -75,9 +85,12 @@ Evidence relationships are directional. They do not require modification of the 
 When adding or changing a relationship:
 
 - Verify that every referenced governed-record identifier exists.
+- For a qualified cross-repository reference, verify that the repository is listed in `.project/application.md` and verify the target record in that repository when it is accessible.
 - Reject self-references and duplicate entries.
 - Update the `updated` date of every modified work item.
 - Record material relationship changes in history.
+
+For reciprocal cross-repository relationships, update both owning repositories as one coordinated change. If one repository is unavailable, do not claim relationship integrity is fully validated; report the incomplete reciprocal update explicitly.
 
 When validating governance state:
 

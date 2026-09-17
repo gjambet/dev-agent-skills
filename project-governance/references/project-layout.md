@@ -7,6 +7,7 @@ Use `.project/` at the repository root as the canonical governance directory.
 ```text
 .project/
 ├── architecture-decisions/
+├── application.md
 ├── glossary.md
 ├── sparks/
 ├── requirements/
@@ -14,13 +15,15 @@ Use `.project/` at the repository root as the canonical governance directory.
 ├── technical-design/
 └── technical-debt/
 ```
+Create `application.md` only when the repository participates in a multi-repository application. Follow [application-topology.md](application-topology.md) for its schema, master-repository rules, and cross-repository behaviour.
+
 
 Create `glossary.md` only when project documentation retains non-English
 business terminology as permitted by `project-compliance`; it is not required
 otherwise. The glossary belongs directly under `.project/`, not in a work-item
 directory.
 
-The six directories are required. `glossary.md` is conditional.
+The six directories are required. `application.md` and `glossary.md` are conditional.
 
 Keep the complete directory under version control. Treat its contents as
 project-local state belonging to the affected repository.
@@ -33,6 +36,7 @@ Use these fixed directory names. Do not relocate governed artefacts outside
 - Resolve the repository root before reading or changing governance state.
 - When `.project/` does not exist, create the complete required structure.
 - Create the governance directories without speculative work items.
+- Do not create `application.md` for a single-repository application merely to fill the layout.
 - Do not create an empty `glossary.md`; create it when the first qualifying term
   is introduced.
 - When an empty directory must be retained by Git, add a minimal `.gitkeep`.

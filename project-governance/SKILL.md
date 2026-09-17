@@ -12,17 +12,18 @@ Never store a consuming project's governed records in this skills repository. Pr
 ## Workflow
 
 1. Read [project-layout.md](references/project-layout.md) before initializing or validating `.project/`.
-2. Read the reference for every work-item type involved:
+2. When `.project/application.md` exists or the repository is part of a multi-repository application, read [application-topology.md](references/application-topology.md) before making application-scoped or cross-repository governance changes.
+3. Read the reference for every work-item type involved:
    - [sparks.md](references/work-item-sparks.md)
    - [requirements.md](references/work-item-requirements.md)
    - [technical-debt.md](references/work-item-debts.md)
-3. Read [policy-exceptions.md](references/policy-exceptions.md) before creating, changing, matching, expiring, or validating a policy exception.
-4. Read [architecture-decision-records.md](references/architecture-decision-records.md) before creating, changing, superseding, or validating an ADR.
-5. Read [technical-designs.md](references/technical-designs.md) before creating,
+4. Read [policy-exceptions.md](references/policy-exceptions.md) before creating, changing, matching, expiring, or validating a policy exception.
+5. Read [architecture-decision-records.md](references/architecture-decision-records.md) before creating, changing, superseding, or validating an ADR.
+6. Read [technical-designs.md](references/technical-designs.md) before creating,
    changing, or validating a technical design.
-6. Read [work-items-relationships-rules.md](references/work-items-relationships-rules.md) before creating, changing, removing, or validating relationships or evidence links.
-7. Validate existing governance state before modifying it.
-8. Preserve stable identifiers, history, evidence, and relationship integrity.
+7. Read [work-items-relationships-rules.md](references/work-items-relationships-rules.md) before creating, changing, removing, or validating relationships or evidence links.
+8. Validate existing governance state before modifying it.
+9. Preserve stable identifiers, history, evidence, and relationship integrity.
 
 ## Shared identity and filename rules
 
