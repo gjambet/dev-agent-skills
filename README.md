@@ -12,6 +12,8 @@ dev-agent-skills/
 │   └── SKILL.md
 ├── development-process/
 │   └── SKILL.md
+├── keycloak-identity/
+│   └── SKILL.md
 ├── project-governance/
 │   ├── SKILL.md
 │   └── references/
@@ -30,6 +32,8 @@ dev-agent-skills/
 The `project-governance` skill defines project-local storage, work-item lifecycles, policy exceptions, architecture decision records, technical designs, and typed traceability relationships. ADRs explain why an architectural choice was made; technical designs under `.project/technical-design/` explain how it is implemented. Requirements use `implemented-by` to reference verifiable implementation artifacts.
 
 The `project-compliance` skill checks every skill present in this repository, including future skills, and reconciles unjustified violations into the affected project's technical-debt records. It also requires project documentation to be written in English and places definitions for business-required foreign-language terms in `.project/glossary.md`.
+
+The `keycloak-identity` skill defines project isolation in Keycloak, Keycloak-only authentication, and safe linking of existing application accounts to OIDC identities.
 
 Projects consume this repository through their `.agents/skills` directory. Keep project-specific configuration in the consuming project's `AGENTS.md`; keep reusable workflows and standards here.
 
