@@ -39,6 +39,14 @@ description: Apply reusable Java coding and class-design standards. Use when cre
 - Allow public static methods only when required by Java or a framework.
 - Do not create general-purpose public static utility classes.
 
+## Server-side template page models
+
+- For server-side rendered templates such as Thymeleaf, use a dedicated typed page/view model for each template rather than assembling the template contract from unrelated `Model` attributes in controllers.
+- Centralize construction of that page model in one place, such as a page-model factory, so every controller route rendering the same template receives the same complete template state.
+- Treat the page model as the template's explicit contract: required template state must be represented by the model's type rather than made optional through missing attributes or null checks solely to accommodate inconsistent controller paths.
+- Keep route-specific concerns in controllers, but do not duplicate template-state assembly across routes.
+- Tests for each route rendering a template must verify that the complete page model is provided; prefer compile-time constructor requirements for mandatory state where practical.
+
 ## Project overrides
 
 - Preserve stricter project-specific rules defined in the consuming repository's `AGENTS.md`.
