@@ -42,10 +42,13 @@ description: Apply reusable Java coding and class-design standards. Use when cre
 ## Server-side template page models
 
 - For server-side rendered templates such as Thymeleaf, use a dedicated typed page/view model for each template rather than assembling the template contract from unrelated `Model` attributes in controllers.
-- Centralize construction of that page model in one place, such as a page-model factory, so every controller route rendering the same template receives the same complete template state.
-- Treat the page model as the template's explicit contract: required template state must be represented by the model's type rather than made optional through missing attributes or null checks solely to accommodate inconsistent controller paths.
-- Keep route-specific concerns in controllers, but do not duplicate template-state assembly across routes.
-- Tests for each route rendering a template must verify that the complete page model is provided; prefer compile-time constructor requirements for mandatory state where practical.
+- Every concrete page template must have exactly one dedicated immutable page/view model and exactly one dedicated page-model factory responsible for constructing it. Reusable fragments may define their own typed fragment models when they have a non-trivial data contract.
+- Controllers must not assemble template state with unrelated `Model` attributes. A route rendering a page obtains the page model from its factory and exposes that single page contract to the template.
+- The factory is the completeness boundary for rendering. All mandatory template state must be constructor/record components of the page model and must be supplied by the factory, so missing mandatory state cannot survive compilation or factory construction and fail later during template rendering.
+- Do not weaken mandatory state into nullable fields, optional model attributes, or defensive template null checks merely to support inconsistent controller paths. Model genuinely optional UI state explicitly (`Optional`, sealed variants, dedicated nullable semantics where justified).
+- Centralize defaults, derived presentation data, breadcrumbs, labels, collections and other template-facing composition in the page-model factory. Keep HTTP routing, request parsing, authorization and redirect decisions in controllers.
+- A template must read its functional state through its dedicated page model rather than depending on a bag of unrelated root variables. Cross-cutting framework/infrastructure attributes that are independent of the page contract may remain global.
+- Tests for every route rendering a template must verify that the dedicated factory-backed page model is provided. Add architecture/compliance tests where practical to prevent controllers from reintroducing arbitrary page `Model` assembly.
 
 ## Project overrides
 
