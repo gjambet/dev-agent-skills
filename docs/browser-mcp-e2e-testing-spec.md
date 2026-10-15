@@ -5,6 +5,13 @@ Status: proposal, not implemented. Target: reusable development-agent skill and 
 ## Purpose
 Enable an AI development agent to validate deployed web applications from a real user's perspective, complementing code tests, CI, and read-only ProdObserver logs. The browser MCP is a generic capability, not tied to Patrimonus.
 
+## Generic scope and portability
+**Patrimonus is only an illustrative acceptance-test scenario, not the target or boundary of this capability.** The primary objective is to let an AI agent exercise **any authorized web application** through a real browser, regardless of frontend framework, backend stack, identity provider or deployment environment.
+
+The MCP browser tools must remain application-agnostic. Application-specific workflows, fixtures, assertions, permitted domains, authentication configuration and cleanup rules belong in external, reusable test specifications or skills, not hardcoded in the MCP server. Support both public websites and authenticated applications, subject to explicit access authorization and security restrictions.
+
+Success requires demonstrating the same generic MCP against at least two distinct web applications without modifying MCP implementation code. Patrimonus is the first example; Boursicoton or another authorized web app can serve as the second.
+
 ## Architecture
 Agent → browser MCP → Playwright → isolated headless Chromium → application / Keycloak.
 Keep browser MCP separate from ProdObserver MCP. Run as an isolated container with bounded CPU, memory and concurrency. Integrate with the existing MCP authentication, governance and audit mechanisms. Do not expose arbitrary shell access.
