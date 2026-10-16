@@ -29,7 +29,7 @@ dev-agent-skills/
     └── SKILL.md
 ```
 
-The `project-governance` skill defines GitHub Issues as the initiative backlog, project-local storage for other records, work-item lifecycles, policy exceptions, architecture decision records, technical designs, and typed traceability relationships. ADRs explain why an architectural choice was made; technical designs under `.project/technical-design/` explain how it is implemented. Requirements use `implemented-by` to reference verifiable implementation artifacts.
+The `project-governance` skill defines GitHub Issues as the initiative and technical-debt backlog, project-local storage for other records, work-item lifecycles, policy exceptions, architecture decision records, technical designs, and typed traceability relationships. ADRs explain why an architectural choice was made; technical designs under `.project/technical-design/` explain how it is implemented. Requirements use `implemented-by` to reference verifiable implementation artifacts.
 
 The `project-compliance` skill checks every skill present in this repository, including future skills, and reconciles unjustified violations into the affected project's technical-debt records. It also requires project documentation to be written in English and places definitions for business-required foreign-language terms in `.project/glossary.md`.
 

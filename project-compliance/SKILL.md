@@ -1,6 +1,6 @@
 ---
 name: project-compliance
-description: Check whether a project complies with every engineering skill in this skills repository, including skills added later, and reconcile violations with valid policy exceptions or technical-debt records. Use when baselining, reviewing, auditing, changing, releasing, or periodically reconciling a project's compliance with its engineering framework.
+description: Check whether a project complies with every engineering skill in this skills repository, including skills added later, and reconcile violations with valid policy exceptions or technical-debt issues. Use when baselining, reviewing, auditing, changing, releasing, or periodically reconciling a project's compliance with its engineering framework.
 ---
 
 # Project Compliance
@@ -54,7 +54,7 @@ For every applicable rule:
 4. Search for a matching policy exception.
 5. If a valid matching exception exists, record the finding as excepted and do
    not create technical debt.
-6. Otherwise create or update one technical-debt record for the violation.
+6. Otherwise create or update one technical-debt issue for the violation.
 7. Reconcile existing records by updating evidence and scope, merging
    duplicates, and resolving records whose violations no longer exist.
 
@@ -87,40 +87,13 @@ exception was rejected in the debt evidence.
 
 ## Debt storage
 
-Use `.project/technical-debt/` whenever the canonical technical-debt store is
-usable according to `project-governance`, even when one or more governance
-rules are violated.
+Use GitHub Issues in the owning repository as the sole technical-debt store, regardless of whether local .project/ governance exists. Read project-governance/references/work-item-debts.md and github-issues.md before capture or migration.
 
-A filename discrepancy, stale status suffix, incomplete record, or other
-isolated governance violation makes the affected record non-compliant; it does
-not make the entire governance implementation unusable. Record or update the
-finding in the canonical technical-debt directory and report the governance
-violation separately.
-
-Treat the canonical technical-debt store as unusable only when safe
-reconciliation is not possible, including when:
-
-- `.project/technical-debt/` is missing;
-- the required target directory cannot be determined unambiguously;
-- existing records cannot be reliably parsed or identified;
-- writing there could lose, overwrite, or duplicate governance state.
-
-When the canonical technical-debt store is absent or unusable:
-
-- store or update the finding in the repository root;
-- use `debt-<sequence>-<short-topic>-<status>.md` and the technical-debt
-  format defined by the imported `project-governance` skill when it can be
-  read;
-- otherwise preserve at minimum a stable identifier, title, status, dates,
-  violated skill, violated rule, affected component, evidence, impact, and
-  remediation criteria;
-- record the missing or unusable governance store as a separate compliance
-  violation;
-- migrate or merge root debt records into `.project/technical-debt/` after
-  the canonical store becomes usable.
-
-Never discard a root debt record during migration. Preserve its identifier when
-available and avoid creating a duplicate governed record.
+- Search open and closed issues by skill, rule and affected component; update or reopen the existing matching finding.
+- Include concrete evidence, impact, remediation and verification criteria, and relevant exception or requirement links.
+- Do not create .project/technical-debt/, root debt-*.md files, legacy debt stores or their placeholders.
+- Treat missing or invalid local governance as a separate finding where applicable, without requiring a local debt store to report it.
+- When GitHub is unavailable, report the blocker and retain unmigrated source records. Do not claim complete reconciliation or silently create a second backlog.
 
 ## Check triggers
 
@@ -154,12 +127,12 @@ During every reconciliation:
 - report invalid governance separately from the violations it prevents the
   framework from storing normally.
 
-Return a summary containing the applicable skills, checked rules, compliant
+Return a summary containing the applicable skills, checked rules, compliant findings, exceptions, GitHub debt issues, unresolved access failures and evidence.
 
-## GitHub initiative backlog
+## GitHub initiative and debt backlogs
 
-- Read project-governance/references/github-issues.md and validate the initiative backlog against that standard.
-- Reject new or remaining tracked spark records and spark-directory placeholders, including legacy locations.
+- Read project-governance/references/github-issues.md and validate the initiative and debt backlogs against that standard.
+- Reject new or remaining tracked spark records, local debt records and obsolete backlog-directory placeholders, including legacy locations.
 - Confirm migrated records have corresponding issues with preserved content, lifecycle, history and working inbound links before accepting source removal.
 - Treat an unavailable GitHub connection as incomplete backlog validation, not proof that no initiatives exist.
-- Apply the unchanged local rules to requirements, technical debt, policy exceptions, ADRs and designs.
+- Apply the unchanged local rules to requirements, policy exceptions, ADRs and designs.

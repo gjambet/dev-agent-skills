@@ -1,6 +1,6 @@
 # Project layout
 
-Use `.project/` at the repository root as the canonical directory for local governance documents. GitHub Issues is the canonical initiative backlog.
+Use `.project/` at the repository root as the canonical directory for local governance documents. GitHub Issues is the canonical initiative and technical-debt backlog.
 
 ## Canonical structure
 
@@ -11,8 +11,7 @@ Use `.project/` at the repository root as the canonical directory for local gove
 ├── glossary.md
 ├── requirements/
 ├── policy-exceptions/
-├── technical-design/
-└── technical-debt/
+└── technical-design/
 ```
 Create `application.md` only when the repository participates in a multi-repository application. Follow [application-topology.md](application-topology.md) for its schema, master-repository rules, and cross-repository behaviour.
 
@@ -22,7 +21,7 @@ business terminology as permitted by `project-compliance`; it is not required
 otherwise. The glossary belongs directly under `.project/`, not in a work-item
 directory.
 
-The five directories are required. Initiatives live in GitHub Issues; do not create a sparks directory or its placeholder. Follow [github-issues.md](github-issues.md). `application.md` and `glossary.md` are conditional.
+The four directories are required. Initiatives and technical debt live in GitHub Issues; do not create sparks or technical-debt directories or their placeholders. Follow [github-issues.md](github-issues.md). `application.md` and `glossary.md` are conditional.
 
 Keep the complete directory under version control. Treat its contents as
 project-local state belonging to the affected repository.
@@ -62,5 +61,4 @@ suffixes, incomplete content, or another isolated record-level violation remain
 governance violations, but use the canonical store when records can still be
 stored and reconciled safely.
 
-Use a fallback store only when the canonical store is absent or unusable. Do
-not use fallback storage merely because governance is partially non-compliant.
+For local governed record types only, use a fallback store only when the canonical local store is absent or unusable. Do not use fallback storage merely because governance is partially non-compliant. Initiatives and technical debt never fall back from GitHub Issues to local backlog files; retain unmigrated source records and report unavailable GitHub access.

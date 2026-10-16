@@ -23,7 +23,7 @@ affected project.
 
 The project-governance skill must define:
 
-- The canonical project-local storage location for each governed artefact type.
+- The canonical GitHub issue store for initiatives and technical debt, and project-local storage for other governed artefact types.
 - The identity, filename, metadata, required content, and lifecycle of each
   artefact type.
 - The rules for creating, updating, relating, and retaining governed artefacts.
@@ -35,7 +35,7 @@ The project-governance skill must define:
 
 The governed artefacts must include:
 
-- Sparks.
+- GitHub initiative issues (formerly sparks).
 - Requirements.
 - Technical-debt items.
 - Policy exceptions.
@@ -44,8 +44,7 @@ The governed artefacts must include:
 
 ## Storage rules
 
-- Keep governed artefacts under the affected repository's `.project/`
-  directory.
+- Keep requirements, policy exceptions, ADRs and designs under the affected repository's `.project/` directory. Keep initiatives and technical debt in that repository's GitHub Issues.
 - Keep technical designs in the permanent `.project/technical-design/`
   directory.
 - Keep project governance state under version control.
@@ -87,8 +86,7 @@ For every governed artefact type, define:
 - Expected metadata and content are defined for every governed artefact type.
 - Lifecycle and retention rules are explicit where applicable.
 - Relationship semantics and integrity rules are explicit.
-- The framework remains project-local and independent of a specific issue
-  provider.
+- Every record has one owning repository; GitHub Issues is authoritative for initiatives and technical debt, while other governance stays project-local.
 
 
 ## Initiative backlog migration — 2026-10-16
@@ -96,3 +94,8 @@ For every governed artefact type, define:
 GitHub Issues is now the canonical initiative backlog. Historical spark identifiers, paths and verification commands above describe the pre-migration state; they are not current filesystem requirements. Refer to:
 
 - `spark-0001`: https://github.com/gjambet/dev-agent-skills/issues/7
+
+
+## Backlog storage standard — 2026-10-16
+
+Updated the accepted governance requirement to reflect the project owner's GitHub Issues standard for initiatives and technical debt. Source-controlled documents remain authoritative for requirements, exceptions, decisions and designs.

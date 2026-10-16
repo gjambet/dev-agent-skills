@@ -16,5 +16,5 @@ description: Apply shared development-tooling and repository-management standard
 ## Backlog tooling
 
 - Use GitHub tools for issue discovery, creation and lifecycle updates; use Workbench for registered repository edits and Git operations.
-- Use GitHub Issues as the initiative source of truth. Do not bootstrap .project/sparks/, SPARKS/, docs/sparks/ or empty placeholders.
-- Preserve requirements, technical debt, policy exceptions, ADRs and designs in their existing local stores.
+- Use GitHub Issues as the initiative and technical-debt source of truth. Do not bootstrap .project/sparks/, SPARKS/, docs/sparks/, .project/technical-debt/, root debt files or empty placeholders.
+- Preserve requirements, policy exceptions, ADRs and designs in their existing local stores.

@@ -42,10 +42,7 @@ The project-compliance skill must:
   foreign-language terminology.
 - Check for a valid matching policy exception before recording a violation as
   technical debt.
-- Store compliance debt in the project-governance technical-debt directory when
-  governance is valid.
-- Store compliance debt in the repository root when project-governance is
-  absent or incorrectly implemented.
+- Store compliance debt in the owning repository's GitHub Issues, whether local governance is valid, missing or incomplete. Never fall back to root Markdown debt records.
 
 ## Check triggers
 
@@ -91,8 +88,7 @@ During reconciliation, the skill must:
 - The skill explicitly requires and follows `project-governance`.
 - Initial, incremental, scheduled, and release-oriented checks are defined.
 - Regression, existing debt, and justified-exception handling are unambiguous.
-- Compliance debt is stored in the affected project, never in this skills
-  repository.
+- Compliance debt is stored in the affected repository's GitHub Issues, never in this skills repository's backlog.
 - All current and future skills in this repository are discovered automatically.
 - Invalid or missing governance cannot prevent a compliance violation from
   being recorded.
@@ -105,3 +101,8 @@ During reconciliation, the skill must:
 GitHub Issues is now the canonical initiative backlog. Historical spark identifiers, paths and verification commands above describe the pre-migration state; they are not current filesystem requirements. Refer to:
 
 - `spark-0002`: https://github.com/gjambet/dev-agent-skills/issues/8
+
+
+## Debt storage standard — 2026-10-16
+
+Updated the accepted storage rules to use GitHub Issues for all compliance findings, as requested by the project owner. Local policy exceptions and other governance records retain their existing stores.

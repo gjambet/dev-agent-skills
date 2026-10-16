@@ -15,8 +15,8 @@ description: Apply shared development workflow and delivery gates. Use when impl
 - If the complete test suite cannot be executed, stop before pushing and report the blocker explicitly.
 - After any code or test change made following the test run, run the complete Maven test suite again before pushing.
 
-## Initiative tracking
+## Initiative and technical-debt tracking
 
-- Use the owning repository's GitHub Issues for ideas and initiatives. Read project-governance/references/github-issues.md before backlog discovery, capture or migration.
+- Use the owning repository's GitHub Issues for ideas, initiatives and technical debt. Read project-governance/references/github-issues.md before backlog discovery, capture or migration.
 - Search existing open and closed issues, keep progress and evidence on the issue, and reference its URL in delivery work.
-- Never create or maintain spark Markdown files or spark directories in repositories.
+- Never create or maintain spark/debt Markdown records or obsolete backlog directories in repositories.

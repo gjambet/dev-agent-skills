@@ -1,10 +1,10 @@
 # Work-item relationship rules
 
-Use typed relationships to preserve traceability between GitHub initiative issues, requirements, technical debt, policy exceptions, architecture decisions, technical designs, implementation, and verification evidence.
+Use typed relationships to preserve traceability between GitHub initiative and debt issues, requirements, policy exceptions, architecture decisions, technical designs, implementation, and verification evidence.
 
 ## Representation
 
-Store relationships in the work-item frontmatter:
+For local governed records, store relationships in frontmatter. For GitHub initiative and debt issues, record relationships in the issue body or comments with canonical links. Local representation:
 
 ```yaml
 relationships:
@@ -13,7 +13,7 @@ relationships:
 
 Use stable governed-record identifiers for relationships between work items,
 architecture decision records, and technical designs. Do not use filenames,
-paths, titles, or mutable document URLs as governed-record identifiers. For GitHub initiatives, use the canonical issue HTTPS URL as the external identity in related or originated-from; verify the issue exists. Preserve legacy spark IDs only in migration mappings and historical text.
+paths, titles, or mutable document URLs as governed-record identifiers. For GitHub initiatives and technical debt, use the canonical issue HTTPS URL as the external identity in related or originated-from; verify the issue exists. Preserve legacy spark and debt IDs only in migration mappings and historical text.
 
 For a relationship to a governed record owned by another repository in the same multi-repository application, qualify the stable identifier with the repository identifier from `.project/application.md`:
 
@@ -23,7 +23,7 @@ relationships:
     - gjambet/quittances-api:requirement-0012
 ```
 
-Use bare identifiers for local records owned by the current repository. Use qualified identifiers only for cross-repository local-record references. Issue URLs are valid for same-repository and cross-repository initiative relationships.
+Use bare identifiers for local records owned by the current repository. Use qualified identifiers only for cross-repository local-record references. Issue URLs are valid for same-repository and cross-repository initiative and debt relationships.
 
 Use evidence entries for links to implementation or verification artifacts:
 
@@ -48,8 +48,8 @@ Keep entries unique and deterministic. Order work-item identifiers lexicographic
 
 ### `affects`
 
-- Use `affects` from technical debt to each requirement whose implementation or verification is affected.
-- Add the debt item to the affected requirement's `related` list unless a more specific reverse relationship is defined.
+- Record affected requirements on the debt issue with their repository paths or stable IDs and links.
+- Add the canonical debt issue URL to the affected requirement's `related` list unless a more specific reverse relationship is defined.
 - Do not use `affects` as a substitute for documenting affected components and concrete impact.
 
 ### Architecture decisions and technical designs
@@ -76,7 +76,7 @@ Evidence relationships are directional. They do not require modification of the 
 
 ### `remediated-by`
 
-- Use `remediated-by` on technical-debt items.
+- Record remediation evidence on technical-debt GitHub issues.
 - Reference the source changes, commits, or pull requests that remove the debt.
 - Do not treat remediation evidence alone as proof of resolution.
 
