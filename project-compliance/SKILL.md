@@ -155,3 +155,11 @@ During every reconciliation:
   framework from storing normally.
 
 Return a summary containing the applicable skills, checked rules, compliant
+
+## GitHub initiative backlog
+
+- Read project-governance/references/github-issues.md and validate the initiative backlog against that standard.
+- Reject new or remaining tracked spark records and spark-directory placeholders, including legacy locations.
+- Confirm migrated records have corresponding issues with preserved content, lifecycle, history and working inbound links before accepting source removal.
+- Treat an unavailable GitHub connection as incomplete backlog validation, not proof that no initiatives exist.
+- Apply the unchanged local rules to requirements, technical debt, policy exceptions, ADRs and designs.

@@ -1,6 +1,6 @@
 # Work-item relationship rules
 
-Use typed relationships to preserve traceability between sparks, requirements, technical debt, policy exceptions, architecture decisions, technical designs, implementation, and verification evidence.
+Use typed relationships to preserve traceability between GitHub initiative issues, requirements, technical debt, policy exceptions, architecture decisions, technical designs, implementation, and verification evidence.
 
 ## Representation
 
@@ -13,7 +13,7 @@ relationships:
 
 Use stable governed-record identifiers for relationships between work items,
 architecture decision records, and technical designs. Do not use filenames,
-paths, titles, or mutable URLs as governed-record identifiers.
+paths, titles, or mutable document URLs as governed-record identifiers. For GitHub initiatives, use the canonical issue HTTPS URL as the external identity in related or originated-from; verify the issue exists. Preserve legacy spark IDs only in migration mappings and historical text.
 
 For a relationship to a governed record owned by another repository in the same multi-repository application, qualify the stable identifier with the repository identifier from `.project/application.md`:
 
@@ -23,7 +23,7 @@ relationships:
     - gjambet/quittances-api:requirement-0012
 ```
 
-Use bare identifiers for records owned by the current repository. Use qualified identifiers only for cross-repository references.
+Use bare identifiers for local records owned by the current repository. Use qualified identifiers only for cross-repository local-record references. Issue URLs are valid for same-repository and cross-repository initiative relationships.
 
 Use evidence entries for links to implementation or verification artifacts:
 
@@ -44,7 +44,7 @@ Keep entries unique and deterministic. Order work-item identifiers lexicographic
 
 - Use `related` for a meaningful relationship that has no more specific type.
 - Record it in both governed records.
-- Add and remove both sides in the same change.
+- Add and remove both sides in the same change. For an issue-to-document relationship, link the governed document from the issue and the canonical issue URL from the document; preserve reciprocal intent without copying the backlog into Git.
 
 ### `affects`
 
@@ -84,7 +84,7 @@ Evidence relationships are directional. They do not require modification of the 
 
 When adding or changing a relationship:
 
-- Verify that every referenced governed-record identifier exists.
+- Verify that every referenced governed-record identifier exists, and verify each GitHub issue URL remotely when issue access is available. Report unavailable remote verification explicitly.
 - For a qualified cross-repository reference, verify that the repository is listed in `.project/application.md` and verify the target record in that repository when it is accessible.
 - Reject self-references and duplicate entries.
 - Update the `updated` date of every modified work item.

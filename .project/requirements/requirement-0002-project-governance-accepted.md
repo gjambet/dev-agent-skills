@@ -3,10 +3,10 @@ id: requirement-0002
 title: Define project governance
 status: accepted
 created: 2026-08-23
-updated: 2026-09-01
+updated: 2026-10-16
 relationships:
   related:
-    - spark-0001
+    - https://github.com/gjambet/dev-agent-skills/issues/7
   implemented-by: []
 ---
 
@@ -89,3 +89,10 @@ For every governed artefact type, define:
 - Relationship semantics and integrity rules are explicit.
 - The framework remains project-local and independent of a specific issue
   provider.
+
+
+## Initiative backlog migration — 2026-10-16
+
+GitHub Issues is now the canonical initiative backlog. Historical spark identifiers, paths and verification commands above describe the pre-migration state; they are not current filesystem requirements. Refer to:
+
+- `spark-0001`: https://github.com/gjambet/dev-agent-skills/issues/7

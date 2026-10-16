@@ -1,6 +1,6 @@
 # Project layout
 
-Use `.project/` at the repository root as the canonical governance directory.
+Use `.project/` at the repository root as the canonical directory for local governance documents. GitHub Issues is the canonical initiative backlog.
 
 ## Canonical structure
 
@@ -9,7 +9,6 @@ Use `.project/` at the repository root as the canonical governance directory.
 ├── architecture-decisions/
 ├── application.md
 ├── glossary.md
-├── sparks/
 ├── requirements/
 ├── policy-exceptions/
 ├── technical-design/
@@ -23,7 +22,7 @@ business terminology as permitted by `project-compliance`; it is not required
 otherwise. The glossary belongs directly under `.project/`, not in a work-item
 directory.
 
-The six directories are required. `application.md` and `glossary.md` are conditional.
+The five directories are required. Initiatives live in GitHub Issues; do not create a sparks directory or its placeholder. Follow [github-issues.md](github-issues.md). `application.md` and `glossary.md` are conditional.
 
 Keep the complete directory under version control. Treat its contents as
 project-local state belonging to the affected repository.

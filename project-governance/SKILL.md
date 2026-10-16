@@ -1,20 +1,20 @@
 ---
 name: project-governance
-description: Establish and maintain the project-local governance structure used to record sparks, requirements, technical debt, policy exceptions, architecture decision records, and technical designs. Use when initializing or validating project governance, discovering project work, capturing or promoting an idea, managing requirements, recording technical debt, reviewing policy exceptions, managing architecture decisions or technical designs, or updating governed-record relationships and lifecycle states.
+description: Establish and maintain the governance structure using GitHub Issues for initiatives and project-local records for requirements, technical debt, policy exceptions, architecture decision records, and technical designs. Use when initializing or validating project governance, discovering project work, capturing or promoting an idea, managing requirements, recording technical debt, reviewing policy exceptions, managing architecture decisions or technical designs, or updating governed-record relationships and lifecycle states.
 ---
 
 # Project Governance
 
-Resolve the repository root before reading or changing governance state. Use `.project/` as the project-local source of truth and keep it under version control.
+Resolve the repository root before reading or changing governance state. Use GitHub Issues as the canonical initiative backlog and `.project/` for the other governed record types; keep local governance under version control.
 
-Never store a consuming project's governed records in this skills repository. Preserve stricter project-specific rules defined in `AGENTS.md`.
+Never store a consuming project's governed records in this skills repository. Store this repository's own initiatives in its GitHub Issues. Preserve stricter project-specific rules defined in `AGENTS.md`.
 
 ## Workflow
 
 1. Read [project-layout.md](references/project-layout.md) before initializing or validating `.project/`.
 2. When `.project/application.md` exists or the repository is part of a multi-repository application, read [application-topology.md](references/application-topology.md) before making application-scoped or cross-repository governance changes.
 3. Read the reference for every work-item type involved:
-   - [sparks.md](references/work-item-sparks.md)
+   - [GitHub issue backlog](references/github-issues.md) for initiatives, ideas, backlog discovery and legacy spark migration
    - [requirements.md](references/work-item-requirements.md)
    - [technical-debt.md](references/work-item-debts.md)
 4. Read [policy-exceptions.md](references/policy-exceptions.md) before creating, changing, matching, expiring, or validating a policy exception.
@@ -27,8 +27,8 @@ Never store a consuming project's governed records in this skills repository. Pr
 
 ## Shared identity and filename rules
 
-- Store each governed record in one Markdown file under its required directory.
-- Use `spark-<sequence>`, `requirement-<sequence>`, `debt-<sequence>`,
+- Store each project-local governed record in one Markdown file under its required directory. Initiatives live in GitHub Issues, identified by issue URL.
+- Use `requirement-<sequence>`, `debt-<sequence>`,
   `adr-<sequence>`, `design-<sequence>`, or `policy-exception-<sequence>` as
   the stable identifier.
 - Name lifecycle-managed records `<id>-<short-topic>-<status>.md`.

@@ -3,10 +3,10 @@ id: requirement-0001
 title: Define project compliance skill behaviour
 status: implemented
 created: 2026-08-23
-updated: 2026-09-01
+updated: 2026-10-16
 relationships:
   related:
-    - spark-0002
+    - https://github.com/gjambet/dev-agent-skills/issues/8
   implemented-by:
     - type: source
       reference: project-compliance/SKILL.md
@@ -98,3 +98,10 @@ During reconciliation, the skill must:
   being recorded.
 - The skill reconciles an existing backlog without creating duplicate work
   items.
+
+
+## Initiative backlog migration — 2026-10-16
+
+GitHub Issues is now the canonical initiative backlog. Historical spark identifiers, paths and verification commands above describe the pre-migration state; they are not current filesystem requirements. Refer to:
+
+- `spark-0002`: https://github.com/gjambet/dev-agent-skills/issues/8

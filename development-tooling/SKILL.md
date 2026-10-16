@@ -12,3 +12,9 @@ description: Apply shared development-tooling and repository-management standard
 - Do not introduce a submodule as a shortcut for sharing source code, configuration, documentation, skills, or build logic.
 - When replacing an existing submodule, preserve reproducibility by documenting how the external content is obtained and which version is expected.
 - Preserve stricter project-specific rules defined in the consuming repository's `AGENTS.md`.
+
+## Backlog tooling
+
+- Use GitHub tools for issue discovery, creation and lifecycle updates; use Workbench for registered repository edits and Git operations.
+- Use GitHub Issues as the initiative source of truth. Do not bootstrap .project/sparks/, SPARKS/, docs/sparks/ or empty placeholders.
+- Preserve requirements, technical debt, policy exceptions, ADRs and designs in their existing local stores.
