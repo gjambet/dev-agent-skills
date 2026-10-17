@@ -1,6 +1,6 @@
 ---
 name: java-coding-standards
-description: Apply reusable Java coding and class-design standards. Use when creating, modifying, or reviewing Java classes, packages, refactoring responsibilities, deciding whether a type should be nested or top-level, or choosing between static and instance methods.
+description: Apply reusable Java coding and class-design standards. Use when creating, modifying, or reviewing Java classes, packages, refactoring responsibilities or ports/adapters/schedulers, deciding whether a type should be nested or top-level, or choosing between static and instance methods.
 ---
 
 # Java Coding Standards
@@ -21,6 +21,19 @@ description: Apply reusable Java coding and class-design standards. Use when cre
 - Use `me.guillaume.order_management`, not `me.guillaume.orderManagement`, `me.guillaume.OrderManagement` or `me.guillaume.order-management`.
 - Apply this rule when creating or renaming packages; do not perform unrelated legacy package migrations.
 - When a package migration is in scope, update package declarations, imports, source-directory paths, tests and relevant build or framework configuration consistently.
+
+## Ports, adapters and scheduled triggers
+
+- Keep application/domain orchestration in feature packages, independent of protocol SDKs and concrete infrastructure implementations.
+- Use the plural package names `<base>.adapters.inbounds.<protocol>` (for example `mcp` or `web`) and `<base>.adapters.outbounds.<provider>` (for example `github`, `ssh` or `jdbc`). Keep the application bootstrap and shared framework configuration at their existing composition boundary.
+- Put exposed MCP tools, tool registration, protocol schemas/DTOs, response mapping and transport identity extraction in `adapters.inbounds.mcp`. Keep adapters thin: translate requests, delegate to an application service, then translate results. Put HTTP controllers and page models/factories in the corresponding inbound web adapter.
+- Define outbound interfaces in the owning core feature's `ports` package, using application-owned request/result types. Depend on those ports from services; implement them in outbound adapters. Never make core code import adapter packages.
+- Keep provider SDKs, HTTP/SSH/JDBC clients, connection settings, credential lookup, provider DTOs and provider-error translation inside the relevant outbound adapter. Expose bounded, sanitized failures through the port while preserving the existing operational/audit contract.
+- Put periodic trigger beans in `<base>.schedulers`. Delegate substantive application work to services or ports; keep cron, timezone, initial delay, enablement and retry behavior unchanged during structural refactoring. Core services must not depend on scheduler classes.
+- Prefer cohesive top-level types and constructor injection. Introduce a port where an external dependency is actually crossed; do not create interfaces for every internal helper or force extra Maven modules.
+- Apply these rules to the components covered by the requested refactor, preserving independent executable/module boundaries. Identify remaining legacy boundaries explicitly; do not hide infrastructure in a renamed core service or claim compliance from directory moves alone.
+- During migration update declarations, paths, imports, wiring, tests and documentation together. Preserve public tool names, JSON fields, required/optional parameters, URLs, authorization, audit coverage, limits and database compatibility unless a behavior change is explicitly requested.
+- Add regression checks for dependency direction and trigger/endpoint placement, plus contract tests for affected exposed schemas and runtime wiring. Run a clean full build/test suite after moving classes to exclude stale compiled classes.
 
 ## Class design
 
