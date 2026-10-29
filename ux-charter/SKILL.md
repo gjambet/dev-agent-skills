@@ -1,9 +1,9 @@
 ---
-name: entity-deletion-ux
+name: ux-charter
 description: Design, implement, or review deletion of named domain entities and user accounts. Use when adding or changing destructive deletion controls, confirmation flows, or backend deletion endpoints in an application.
 ---
 
-# Entity Deletion UX
+# UX Charter
 
 ## Presentation
 

@@ -16,7 +16,7 @@ dev-agent-skills/
 │   └── SKILL.md
 ├── keycloak-identity/
 │   └── SKILL.md
-├── entity-deletion-ux/
+├── ux-charter/
 │   └── SKILL.md
 ├── project-governance/
 │   ├── SKILL.md
