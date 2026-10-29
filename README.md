@@ -12,6 +12,8 @@ dev-agent-skills/
 │   └── SKILL.md
 ├── development-process/
 │   └── SKILL.md
+├── project-stack/
+│   └── SKILL.md
 ├── keycloak-identity/
 │   └── SKILL.md
 ├── entity-deletion-ux/
