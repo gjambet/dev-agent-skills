@@ -1,11 +1,31 @@
 ---
 name: ux-charter
-description: Design, implement, or review deletion of named domain entities and user accounts. Use when adding or changing destructive deletion controls, confirmation flows, or backend deletion endpoints in an application.
+description: Design, implement, or review application footers and deletion flows for named domain entities and user accounts. Use when changing footer content, destructive controls, confirmation flows, or backend deletion endpoints.
 ---
 
 # UX Charter
 
-## Presentation
+## Application footer
+
+- Use one shared footer throughout the application. Separate it visually from
+  the main content and let its contents wrap at supported mobile widths without
+  overlap, clipping, or horizontal page scrolling. Omit obsolete branding.
+- Include a visible `GitHub Issues` link in every application footer, including
+  on public pages. Point it directly to the owning application's issue list at
+  `https://github.com/<owner>/<repository>/issues`.
+- Show the running image build time as `Docker build` when metadata is
+  available. Show `Page generated` for server-rendered pages using the time of
+  the current response. Keep that value static until the next full page request.
+  Display both timestamps in ISO 8601 UTC with a `Z` suffix and whole-second precision.
+- For authenticated sessions, show the current login under `User` followed by
+  every active application role under `Roles`, with distinct labels or badges.
+  Hide session identity for anonymous visitors.
+- Use normal type for labels and role badges, and italics for timestamp and
+  username values. Keep the presentation and order consistent across pages.
+
+## Entity and account deletion
+
+### Presentation
 
 - Put the deletion action in a clearly labelled danger zone on the entity's
   detail or edit page, separate from ordinary save and cancel actions. Reuse
@@ -19,7 +39,7 @@ description: Design, implement, or review deletion of named domain entities and 
   the expected name. Provide an accessible input label and a way to cancel.
   Clear confirmation when switching targets or reopening the flow.
 
-## Enforcement
+### Enforcement
 
 - Send the entered name with the deletion request. On the server, authenticate
   and authorize the caller, resolve the target by its stable ID and ownership,
