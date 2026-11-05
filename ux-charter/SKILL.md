@@ -1,9 +1,29 @@
 ---
 name: ux-charter
-description: Design, implement, or review application footers and deletion flows for named domain entities and user accounts. Use when changing footer content, destructive controls, confirmation flows, or backend deletion endpoints.
+description: Design, implement, or review application breadcrumbs, footers, and deletion flows for named domain entities and user accounts. Use when changing page navigation, footer content, destructive controls, confirmation flows, or backend deletion endpoints.
 ---
 
 # UX Charter
+
+## Breadcrumbs
+
+- Use the shared header breadcrumb on navigable pages. When adding, renaming,
+  or moving a page, update its breadcrumb labels, parent trail, and routes.
+- Show the contextual hierarchy from parent to current page. Use meaningful
+  labels that reflect the destination, selected entity, or action. Link each
+  navigable parent to its actual route and preserve the entity context needed
+  to return there. Use plain text for groupings without a destination.
+- Follow the application's root convention. Omit a redundant Home item when
+  the app uses contextual trails and provides Home in its global navigation.
+  Keep a Home link where it is an intentional parent. Avoid a duplicate Back
+  control when the breadcrumb already offers the same destination.
+- Render the trail as an ordered list in a navigation landmark labelled
+  Breadcrumb. Mark the final, non-linked item with `aria-current="page"`.
+  Keep decorative separators out of accessible names.
+- Let long trails wrap or truncate within the header. Keep the current page
+  identifiable and parent links usable at supported mobile widths.
+- Verify the current label and parent destinations for changed routes,
+  including nested detail and action pages, and check the mobile layout.
 
 ## Application footer
 
