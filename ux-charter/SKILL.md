@@ -1,9 +1,15 @@
 ---
 name: ux-charter
-description: Design, implement, or review application breadcrumbs, footers, and deletion flows for named domain entities and user accounts. Use when changing page navigation, footer content, destructive controls, confirmation flows, or backend deletion endpoints.
+description: Design, implement, or review application icons, breadcrumbs, footers, and deletion flows for named domain entities and user accounts. Use when changing icons, page navigation, footer content, destructive controls, confirmation flows, or backend deletion endpoints.
 ---
 
 # UX Charter
+
+## Icons and pictograms
+
+- Use SVG for every interface icon and pictogram, including actions, navigation,
+  and status indicators. Use inline SVG or SVG assets. Do not substitute emoji,
+  icon fonts, Unicode glyphs, or raster images.
 
 ## Breadcrumbs
 
