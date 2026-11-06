@@ -11,6 +11,13 @@ description: Design, implement, or review application icons, breadcrumbs, footer
   and status indicators. Use inline SVG or SVG assets. Do not substitute emoji,
   icon fonts, Unicode glyphs, or raster images.
 
+- Put a section’s edit action on the same row as its heading, aligned to the
+  trailing edge. Reuse the application’s SVG pencil and shared action styling
+  for equivalent edit controls, including their size and focus treatment.
+- Give icon-only edit controls a contextual accessible name such as
+  `Edit ownership`. Use a link to navigate to an edit page and a button for
+  an action performed on the current page.
+
 ## Breadcrumbs
 
 - Use the shared header breadcrumb on navigable pages. When adding, renaming,
