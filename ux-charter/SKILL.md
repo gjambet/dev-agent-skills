@@ -44,8 +44,10 @@ description: Design, implement, or review application icons, breadcrumbs, footer
   the main content and let its contents wrap at supported mobile widths without
   overlap, clipping, or horizontal page scrolling. Omit obsolete branding.
 - Include a visible `GitHub Issues` link in every application footer, including
-  on public pages. Point it directly to the owning application's issue list at
-  `https://github.com/<owner>/<repository>/issues`.
+  on public pages. Point it directly to the issue list of the application's
+  main repository, which is the backend repository. Use that destination
+  for every frontend of the application, including separately hosted frontends.
+  The URL is `https://github.com/<owner>/<backend-repository>/issues`.
 - Show the running image build time as `Docker build` when metadata is
   available. Show `Page generated` for server-rendered pages using the time of
   the current response. Keep that value static until the next full page request.
