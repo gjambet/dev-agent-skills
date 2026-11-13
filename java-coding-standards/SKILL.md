@@ -37,6 +37,7 @@ description: Apply reusable Java coding and class-design standards. Use when cre
 
 ## Class design
 
+- Keep ordering that exists solely for presentation in the inbound presentation layer. Retrieve data without that presentation-specific order, then apply it after retrieval in a dedicated top-level sorter when sorting has an independent responsibility. Do not encode presentation ordering in database queries; keep database ordering only when storage semantics or deterministic pagination/cursor correctness require it.
 - Prefer top-level classes with one clearly defined responsibility.
 - Do not introduce nested or inner classes when the type has an independent responsibility.
 - Extract such types into dedicated top-level classes.
