@@ -49,6 +49,11 @@ description: Apply reusable Java coding and class-design standards. Use when cre
 - Extract such types into dedicated top-level classes.
 - Allow a small implementation-local type only when it has no meaningful responsibility or use outside its enclosing class.
 
+## MCP command pattern
+
+- Implement each declared MCP action with its own dedicated command class.
+- Delegate each action from the MCP adapter to its corresponding command class. Keep action-specific execution logic in that command and reuse existing application services as needed.
+
 ## Static methods and state
 
 - Prefer instance methods for application, domain and infrastructure behaviour.
