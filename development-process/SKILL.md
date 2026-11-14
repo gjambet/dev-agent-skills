@@ -5,6 +5,11 @@ description: Apply shared development workflow and delivery gates. Use when impl
 
 # Development Process
 
+## Branches for issues
+
+- Before implementing a GitHub issue, create or reuse its dedicated branch named `<issue-number>-<issue-title-slug>`. Use the issue title in lowercase, remove accents, and replace spaces and punctuation with hyphens.
+- Keep each issue’s implementation on its dedicated branch.
+
 ## Maven pre-push gate
 
 - Always run the complete Maven test suite immediately before every push.
