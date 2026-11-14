@@ -35,6 +35,12 @@ description: Apply reusable Java coding and class-design standards. Use when cre
 - During migration update declarations, paths, imports, wiring, tests and documentation together. Preserve public tool names, JSON fields, required/optional parameters, URLs, authorization, audit coverage, limits and database compatibility unless a behavior change is explicitly requested.
 - Add regression checks for dependency direction and trigger/endpoint placement, plus contract tests for affected exposed schemas and runtime wiring. Run a clean full build/test suite after moving classes to exclude stale compiled classes.
 
+## Endpoint execution timing
+
+- Instrument every exposed endpoint with a `StopWatch`, including HTTP endpoints and MCP operations. Spring Boot Actuator endpoints are exempt.
+- Start the stopwatch when execution begins and log the endpoint or operation name and elapsed time in milliseconds when execution ends, including on failure.
+- For asynchronous or reactive endpoints, record the duration when processing completes, fails, or is cancelled.
+
 ## Class design
 
 - Keep ordering that exists solely for presentation in the inbound presentation layer. Retrieve data without that presentation-specific order, then apply it after retrieval in a dedicated top-level sorter when sorting has an independent responsibility. Do not encode presentation ordering in database queries; keep database ordering only when storage semantics or deterministic pagination/cursor correctness require it.
