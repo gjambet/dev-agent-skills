@@ -1,9 +1,16 @@
 ---
 name: development-process
-description: Apply shared development workflow and delivery gates. Use when implementing, validating, committing, or pushing changes in Maven-based projects, especially before publishing commits to a remote repository.
+description: Apply the shared feature-branch workflow, issue tracking, and delivery gates. Use when implementing, validating, committing, merging, or pushing changes. Apply the Maven pre-push gate in Maven-based projects.
 ---
 
 # Development Process
+
+## Feature branches
+
+- Always implement changes on a dedicated feature branch.
+- For issue-based work, include the issue number and a short descriptive slug in the branch name, for example `feature/46-task-prerequisites`.
+- After confirming a feature branch has merged into the default branch, delete it locally and on the remote. Apply this rule after every merge, including a partial implementation of an issue.
+- For the next increment of the same issue, create a fresh branch from the updated default branch. Keep the original issue-based name and add an incrementing numeric suffix, for example `feature/46-task-prerequisites-2`, then `feature/46-task-prerequisites-3`.
 
 ## Maven pre-push gate
 
